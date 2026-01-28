@@ -10,3 +10,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Brand assets (keep local only)
+logo_package/
