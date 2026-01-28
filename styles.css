@@ -155,7 +155,7 @@ a {
 /* Angular fold lines - origami inspired */
 .fold {
     position: absolute;
-    background: var(--color-gray-800);
+    background: var(--color-gray-600);
 }
 
 .fold-1 {
@@ -201,7 +201,7 @@ a {
     transform: translateY(-50%);
     width: 500px;
     height: 500px;
-    background: linear-gradient(135deg, var(--color-gray-900) 0%, transparent 60%);
+    background: linear-gradient(135deg, var(--color-gray-700) 0%, transparent 60%);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
@@ -212,7 +212,7 @@ a {
     bottom: -100px;
     width: 400px;
     height: 400px;
-    background: linear-gradient(45deg, var(--color-gray-900) 0%, transparent 50%);
+    background: linear-gradient(45deg, var(--color-gray-700) 0%, transparent 50%);
     clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
@@ -412,7 +412,7 @@ a {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: linear-gradient(135deg, var(--color-gray-900) 0%, transparent 50%);
+    background: linear-gradient(135deg, var(--color-gray-700) 0%, transparent 50%);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     transform: rotate(15deg);
 }
@@ -424,7 +424,7 @@ a {
     left: -5%;
     width: 400px;
     height: 400px;
-    background: linear-gradient(45deg, var(--color-gray-900) 0%, transparent 60%);
+    background: linear-gradient(45deg, var(--color-gray-700) 0%, transparent 60%);
     clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
 
@@ -467,7 +467,7 @@ a {
     left: 10%;
     width: 1px;
     height: 100px;
-    background: var(--color-gray-700);
+    background: var(--color-gray-500);
     transform: rotate(20deg);
 }
 
@@ -478,7 +478,7 @@ a {
     right: 10%;
     width: 1px;
     height: 100px;
-    background: var(--color-gray-700);
+    background: var(--color-gray-500);
     transform: rotate(-20deg);
 }
 
