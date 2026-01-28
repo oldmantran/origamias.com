@@ -1,10 +1,10 @@
-/* ===== CSS Variables - Grayscale Theme ===== */
+/* ===== CSS Variables - Dark Grayscale Theme ===== */
 :root {
     --color-black: #0a0a0a;
-    --color-dark: #1a1a1a;
-    --color-gray-900: #222222;
-    --color-gray-800: #333333;
-    --color-gray-700: #444444;
+    --color-dark: #111111;
+    --color-gray-900: #1a1a1a;
+    --color-gray-800: #222222;
+    --color-gray-700: #333333;
     --color-gray-600: #666666;
     --color-gray-500: #888888;
     --color-gray-400: #aaaaaa;
@@ -31,8 +31,8 @@ body {
     font-family: var(--font-family);
     font-size: 16px;
     line-height: 1.6;
-    color: var(--color-gray-800);
-    background: var(--color-white);
+    color: var(--color-gray-300);
+    background: var(--color-black);
 }
 
 .container {
@@ -44,7 +44,7 @@ body {
 h1, h2, h3 {
     line-height: 1.2;
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 a {
@@ -59,10 +59,10 @@ a {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-800);
 }
 
 .nav-container {
@@ -81,29 +81,28 @@ a {
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
-    color: var(--color-black);
+    width: 44px;
+    height: 44px;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .logo-name {
     font-weight: 700;
     font-size: 1.1rem;
-    color: var(--color-black);
+    color: var(--color-white);
     letter-spacing: -0.01em;
 }
 
 .logo-suffix {
     font-weight: 300;
-    font-size: 0.85rem;
-    color: var(--color-gray-600);
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    letter-spacing: 0.06em;
 }
 
 .nav-links {
@@ -116,24 +115,23 @@ a {
 .nav-links a {
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--color-gray-600);
+    color: var(--color-gray-400);
     transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 .nav-cta {
-    background: var(--color-black);
+    background: var(--color-gray-700);
     color: var(--color-white) !important;
     padding: 10px 20px;
-    border-radius: 0;
     clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
 }
 
 .nav-cta:hover {
-    background: var(--color-gray-800);
+    background: var(--color-gray-600);
 }
 
 /* ===== Hero Section ===== */
@@ -143,7 +141,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 120px 24px 80px;
-    background: var(--color-gray-100);
+    background: var(--color-black);
     position: relative;
     overflow: hidden;
 }
@@ -157,7 +155,7 @@ a {
 /* Angular fold lines - origami inspired */
 .fold {
     position: absolute;
-    background: var(--color-gray-300);
+    background: var(--color-gray-800);
 }
 
 .fold-1 {
@@ -194,16 +192,16 @@ a {
     transform: rotate(12deg);
 }
 
-/* Large geometric shape */
+/* Large geometric shapes */
 .hero-bg::before {
     content: '';
     position: absolute;
     right: -150px;
     top: 50%;
-    transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%);
     width: 500px;
     height: 500px;
-    background: linear-gradient(135deg, var(--color-gray-200) 0%, transparent 60%);
+    background: linear-gradient(135deg, var(--color-gray-900) 0%, transparent 60%);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
@@ -214,12 +212,12 @@ a {
     bottom: -100px;
     width: 400px;
     height: 400px;
-    background: linear-gradient(45deg, var(--color-gray-200) 0%, transparent 50%);
+    background: linear-gradient(45deg, var(--color-gray-900) 0%, transparent 50%);
     clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 800px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -227,48 +225,81 @@ a {
 
 .hero h1 {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    color: var(--color-black);
-    margin-bottom: 24px;
+    color: var(--color-white);
+    margin-bottom: 48px;
     letter-spacing: -0.03em;
     font-weight: 700;
 }
 
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--color-gray-600);
-    margin-bottom: 40px;
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-}
-
+/* ===== Origami Button ===== */
 .btn {
     display: inline-block;
-    padding: 16px 32px;
+    position: relative;
+    padding: 18px 40px;
     font-size: 1rem;
     font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
     border: none;
+    text-decoration: none;
 }
 
 .btn-primary {
-    background: var(--color-black);
+    background: var(--color-gray-700);
     color: var(--color-white);
-    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    clip-path: polygon(
+        0 12px,
+        12px 0,
+        100% 0,
+        100% calc(100% - 12px),
+        calc(100% - 12px) 100%,
+        0 100%
+    );
+}
+
+.btn-primary .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fold corner accents */
+.btn-fold {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+}
+
+.btn-fold-tl {
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, var(--color-gray-500) 50%, transparent 50%);
+}
+
+.btn-fold-br {
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(315deg, var(--color-gray-500) 50%, transparent 50%);
 }
 
 .btn-primary:hover {
-    background: var(--color-gray-800);
+    background: var(--color-gray-600);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:hover .btn-fold-tl {
+    background: linear-gradient(135deg, var(--color-gray-400) 50%, transparent 50%);
+}
+
+.btn-primary:hover .btn-fold-br {
+    background: linear-gradient(315deg, var(--color-gray-400) 50%, transparent 50%);
 }
 
 /* ===== Services Section ===== */
 .services {
     padding: 120px 24px;
-    background: var(--color-white);
+    background: var(--color-gray-900);
     position: relative;
 }
 
@@ -279,19 +310,19 @@ a {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-gray-300), transparent);
+    background: linear-gradient(90deg, transparent, var(--color-gray-700), transparent);
 }
 
 .services h2 {
     font-size: 2.5rem;
     text-align: center;
-    color: var(--color-black);
+    color: var(--color-white);
     margin-bottom: 12px;
 }
 
 .section-subtitle {
     text-align: center;
-    color: var(--color-gray-600);
+    color: var(--color-gray-500);
     font-size: 1.1rem;
     margin-bottom: 60px;
     font-weight: 400;
@@ -305,7 +336,7 @@ a {
 
 .service-card {
     padding: 40px 32px;
-    background: var(--color-gray-100);
+    background: var(--color-gray-800);
     transition: var(--transition);
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
@@ -318,18 +349,18 @@ a {
     left: 0;
     width: 3px;
     height: 60px;
-    background: var(--color-black);
+    background: var(--color-gray-500);
 }
 
 .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-icon {
     width: 56px;
     height: 56px;
-    background: var(--color-black);
+    background: var(--color-gray-700);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -345,13 +376,13 @@ a {
 
 .service-card h3 {
     font-size: 1.25rem;
-    color: var(--color-black);
+    color: var(--color-white);
     margin-bottom: 12px;
     font-weight: 700;
 }
 
 .service-card p {
-    color: var(--color-gray-600);
+    color: var(--color-gray-400);
     line-height: 1.7;
 }
 
@@ -423,7 +454,7 @@ a {
 /* ===== Contact Section ===== */
 .contact {
     padding: 120px 24px;
-    background: var(--color-gray-100);
+    background: var(--color-gray-900);
     text-align: center;
     position: relative;
 }
@@ -435,7 +466,7 @@ a {
     left: 10%;
     width: 1px;
     height: 100px;
-    background: var(--color-gray-300);
+    background: var(--color-gray-700);
     transform: rotate(20deg);
 }
 
@@ -446,39 +477,44 @@ a {
     right: 10%;
     width: 1px;
     height: 100px;
-    background: var(--color-gray-300);
+    background: var(--color-gray-700);
     transform: rotate(-20deg);
 }
 
 .contact h2 {
     font-size: 2.5rem;
-    color: var(--color-black);
+    color: var(--color-white);
     margin-bottom: 12px;
 }
 
+.contact .section-subtitle {
+    margin-bottom: 48px;
+}
+
 .contact-content {
-    margin-top: 48px;
+    margin-top: 0;
 }
 
 .contact-email {
     display: inline-block;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--color-black);
+    color: var(--color-white);
     padding: 20px 40px;
-    border: 2px solid var(--color-black);
+    border: 2px solid var(--color-gray-600);
+    background: transparent;
     transition: var(--transition);
     clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
 }
 
 .contact-email:hover {
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-gray-700);
+    border-color: var(--color-gray-500);
 }
 
 .contact-note {
     margin-top: 20px;
-    color: var(--color-gray-600);
+    color: var(--color-gray-500);
     font-size: 0.95rem;
 }
 
@@ -510,7 +546,6 @@ a {
 .footer-logo {
     width: 48px;
     height: 48px;
-    color: var(--color-gray-600);
 }
 
 .footer p {
@@ -535,10 +570,7 @@ a {
 
     .hero h1 {
         font-size: 2.25rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
+        margin-bottom: 32px;
     }
 
     .hero-bg::before {
@@ -571,6 +603,6 @@ a {
     }
 
     .logo-suffix {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 }
