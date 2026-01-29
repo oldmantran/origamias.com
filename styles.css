@@ -226,10 +226,18 @@ a {
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--color-white);
-    margin-bottom: 48px;
+    margin-bottom: 16px;
     letter-spacing: -0.03em;
     font-weight: 700;
     white-space: nowrap;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-gray-500);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-bottom: 48px;
 }
 
 /* ===== Animated Hero Logo ===== */
