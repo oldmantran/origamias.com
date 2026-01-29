@@ -28,6 +28,11 @@
                     <span class="logo-suffix">Solutions</span>
                 </span>
             </a>
+            <button type="button" class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
@@ -117,7 +122,7 @@
             <div class="about-content">
                 <h2>About Origami Agentic Solutions</h2>
                 <p>We were founded on a simple belief: the best solutions come from understanding the full picture, then folding away the noise to reveal what matters.</p>
-                <p>We bring years of experience in business strategy, systems thinking, and emerging technology to help organizations navigate complexity with confidence.</p>
+                <p>We bring nearly three decades of experience in software delivery, technology optimization, and harmonizing teams to help organizations navigate complexity with confidence.</p>
                 <p>Whether you're streamlining operations, launching a new initiative, or exploring how AI can transform your workflow, we're here to guide the way.</p>
             </div>
         </div>
@@ -147,9 +152,27 @@
                     <path d="M32 8L18 46L32 54L46 46Z" fill="none" stroke="#666666" stroke-width="1.5" stroke-linejoin="round"/>
                     <path d="M32 8L32 54" stroke="#666666" stroke-width="1.5"/>
                 </svg>
-                <p>&copy; 2025 Origami Agentic Solutions LLC. All rights reserved.</p>
+                <p>&copy; 2026 Origami Agentic Solutions LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-open');
+            navToggle.classList.toggle('nav-open');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-open');
+                navToggle.classList.remove('nav-open');
+            });
+        });
+    </script>
 </body>
 </html>
