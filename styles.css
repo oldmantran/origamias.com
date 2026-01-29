@@ -233,10 +233,10 @@ a {
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--color-gray-500);
-    font-weight: 400;
-    letter-spacing: 0.15em;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    color: var(--color-gray-400);
+    font-weight: 300;
+    letter-spacing: 0.05em;
     margin-bottom: 48px;
 }
 
