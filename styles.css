@@ -235,53 +235,46 @@ a {
 /* ===== Animated Hero Logo ===== */
 .hero-logo {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 40px;
-    perspective: 800px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
-.hero-logo .logo-circle,
-.hero-logo .logo-plane {
+.hero-logo-circle,
+.hero-logo-plane {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
 }
 
-.hero-logo .logo-circle svg,
-.hero-logo .logo-plane svg {
+.hero-logo-circle svg,
+.hero-logo-plane svg {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
-.hero-logo .logo-circle {
-    animation: rotateCircle 12s linear infinite;
-    will-change: transform;
+.hero-logo-circle {
+    animation: spinCircle 10s linear infinite;
 }
 
-.hero-logo .logo-plane {
-    animation: rotatePlane 8s linear infinite;
-    will-change: transform;
+.hero-logo-plane {
+    animation: spinPlane 7s linear infinite;
 }
 
-@keyframes rotateCircle {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
+@keyframes spinCircle {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
 }
 
-@keyframes rotatePlane {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(-360deg);
-    }
+@keyframes spinPlane {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
 }
 
 /* ===== Origami Button ===== */
@@ -628,8 +621,8 @@ a {
     }
 
     .hero-logo {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         margin-bottom: 24px;
     }
 
