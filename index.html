@@ -228,7 +228,12 @@
 
         function updateRolodex() {
             cards.forEach((card, index) => {
-                const diff = index - activeIndex;
+                let diff = index - activeIndex;
+
+                // Normalize for circular wrapping
+                if (Math.abs(diff) > totalCards / 2) {
+                    diff = diff > 0 ? diff - totalCards : diff + totalCards;
+                }
 
                 // Calculate position based on difference from active
                 const xOffset = diff * 280;
@@ -238,9 +243,9 @@
                 const opacity = 1 - Math.abs(diff) * 0.4;
 
                 card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) rotateY(${rotation}deg) scale(${scale})`;
-                card.style.opacity = Math.abs(diff) <= 1 ? opacity : 0;
+                card.style.opacity = opacity;
                 card.style.zIndex = 10 - Math.abs(diff);
-                card.style.pointerEvents = Math.abs(diff) <= 1 ? 'auto' : 'none';
+                card.style.pointerEvents = 'auto';
 
                 // Toggle active class for float animation
                 card.classList.toggle('active', index === activeIndex);
