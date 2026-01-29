@@ -234,23 +234,34 @@ a {
 
 /* ===== Animated Hero Logo ===== */
 .hero-logo {
-    perspective: 800px;
-    margin-bottom: 40px;
-}
-
-.hero-logo-svg {
+    position: relative;
     width: 160px;
     height: 160px;
+    margin: 0 auto 40px;
+    perspective: 800px;
 }
 
-.logo-circle {
-    transform-origin: center center;
+.hero-logo .logo-circle,
+.hero-logo .logo-plane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-logo .logo-circle svg,
+.hero-logo .logo-plane svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-logo .logo-circle {
     animation: rotateCircle 12s linear infinite;
     will-change: transform;
 }
 
-.logo-plane {
-    transform-origin: center center;
+.hero-logo .logo-plane {
     animation: rotatePlane 8s linear infinite;
     will-change: transform;
 }
@@ -616,12 +627,9 @@ a {
         white-space: nowrap;
     }
 
-    .hero-logo-svg {
+    .hero-logo {
         width: 120px;
         height: 120px;
-    }
-
-    .hero-logo {
         margin-bottom: 24px;
     }
 
