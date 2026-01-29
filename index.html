@@ -80,37 +80,81 @@
             <h2>What We Do</h2>
             <p class="section-subtitle">Turning tangled problems into elegant solutions</p>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                            <path d="M10 7v6M7 10h6"/>
-                        </svg>
+            <div class="rolodex-container">
+                <button type="button" class="rolodex-nav rolodex-prev" aria-label="Previous">‹</button>
+
+                <div class="rolodex-viewport">
+                    <div class="rolodex-track">
+                        <!-- Card 1: Agentic Analysis -->
+                        <div class="service-card" data-index="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="service-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                            <path d="M10 7v6M7 10h6"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Agentic Analysis</h3>
+                                    <p>Deep dives into your operations to uncover inefficiencies, map processes, and identify opportunities for growth.</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>Agentic Analysis</h3>
+                                    <p>We deploy AI agents to systematically analyze your workflows, data pipelines, and team dynamics. Unlike traditional consulting, our agentic approach surfaces insights faster and deeper—finding patterns humans miss while you focus on running your business.</p>
+                                    <a href="#contact" class="card-cta">Start a Conversation</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Rapid AI Prototyping -->
+                        <div class="service-card" data-index="1">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="service-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Rapid AI Prototyping</h3>
+                                    <p>Fast-track your ideas from concept to working prototype. Validate feasibility, demonstrate value, and iterate quickly before committing to full development.</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>Rapid AI Prototyping</h3>
+                                    <p>Got an idea? We'll have a working demo in your hands faster than you can schedule a kickoff meeting. Our AI-accelerated development process lets you see, touch, and test your vision before investing in full-scale implementation. Fail fast, learn faster, ship fastest.</p>
+                                    <a href="#contact" class="card-cta">Start a Conversation</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: AI Automation -->
+                        <div class="service-card" data-index="2">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="service-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                            <path d="M12 8v2m0 2h.01"/>
+                                        </svg>
+                                    </div>
+                                    <h3>AI Automation</h3>
+                                    <p>Custom AI solutions that automate repetitive tasks, enhance decision-making, and unlock new capabilities.</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>AI Automation</h3>
+                                    <p>Stop paying humans to do robot work. We build custom AI automations that handle the tedious, repetitive tasks draining your team's time and energy—freeing them to focus on creative, high-value work that actually moves the needle.</p>
+                                    <a href="#contact" class="card-cta">Start a Conversation</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Agentic Analysis</h3>
-                    <p>Deep dives into your operations to uncover inefficiencies, map processes, and identify opportunities for growth.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3>Rapid AI Prototyping</h3>
-                    <p>Fast-track your ideas from concept to working prototype. Validate feasibility, demonstrate value, and iterate quickly before committing to full development.</p>
-                </div>
+                <button type="button" class="rolodex-nav rolodex-next" aria-label="Next">›</button>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            <path d="M12 8v2m0 2h.01"/>
-                        </svg>
-                    </div>
-                    <h3>AI Automation</h3>
-                    <p>Custom AI solutions that automate repetitive tasks, enhance decision-making, and unlock new capabilities.</p>
+                <div class="rolodex-dots">
+                    <button type="button" class="rolodex-dot active" data-index="0" aria-label="Go to card 1"></button>
+                    <button type="button" class="rolodex-dot" data-index="1" aria-label="Go to card 2"></button>
+                    <button type="button" class="rolodex-dot" data-index="2" aria-label="Go to card 3"></button>
                 </div>
             </div>
         </div>
@@ -173,6 +217,82 @@
                 navToggle.classList.remove('nav-open');
             });
         });
+
+        // ===== Rolodex Carousel =====
+        const cards = document.querySelectorAll('.service-card');
+        const dots = document.querySelectorAll('.rolodex-dot');
+        const prevBtn = document.querySelector('.rolodex-prev');
+        const nextBtn = document.querySelector('.rolodex-next');
+        let activeIndex = 0;
+        const totalCards = cards.length;
+
+        function updateRolodex() {
+            cards.forEach((card, index) => {
+                const diff = index - activeIndex;
+
+                // Calculate position based on difference from active
+                const xOffset = diff * 280;
+                const zOffset = -Math.abs(diff) * 100;
+                const rotation = diff * -15;
+                const scale = 1 - Math.abs(diff) * 0.15;
+                const opacity = 1 - Math.abs(diff) * 0.4;
+
+                card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) rotateY(${rotation}deg) scale(${scale})`;
+                card.style.opacity = Math.abs(diff) <= 1 ? opacity : 0;
+                card.style.zIndex = 10 - Math.abs(diff);
+                card.style.pointerEvents = Math.abs(diff) <= 1 ? 'auto' : 'none';
+
+                // Toggle active class for float animation
+                card.classList.toggle('active', index === activeIndex);
+
+                // Remove flipped state when navigating away
+                if (index !== activeIndex) {
+                    card.classList.remove('flipped');
+                }
+            });
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        }
+
+        function goToCard(index) {
+            activeIndex = ((index % totalCards) + totalCards) % totalCards;
+            updateRolodex();
+        }
+
+        // Navigation
+        prevBtn.addEventListener('click', () => goToCard(activeIndex - 1));
+        nextBtn.addEventListener('click', () => goToCard(activeIndex + 1));
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToCard(index));
+        });
+
+        // Card click: flip if active, navigate if not
+        cards.forEach((card, index) => {
+            card.addEventListener('click', (e) => {
+                // Don't flip if clicking the CTA link
+                if (e.target.classList.contains('card-cta')) return;
+
+                if (index === activeIndex) {
+                    card.classList.toggle('flipped');
+                } else {
+                    goToCard(index);
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') goToCard(activeIndex - 1);
+            if (e.key === 'ArrowRight') goToCard(activeIndex + 1);
+        });
+
+        // Initialize
+        updateRolodex();
     </script>
 </body>
 </html>

@@ -411,21 +411,80 @@ a {
     font-weight: 400;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-}
-
-.service-card {
-    padding: 40px 32px;
-    background: var(--color-gray-800);
-    transition: var(--transition);
+/* Rolodex Container */
+.rolodex-container {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 60px;
 }
 
-.service-card::before {
+.rolodex-viewport {
+    position: relative;
+    height: 420px;
+    width: 100%;
+    max-width: 800px;
+    perspective: 1200px;
+    overflow: visible;
+}
+
+.rolodex-track {
+    position: relative;
+    width: 280px;
+    height: 380px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+}
+
+/* Service Cards in Rolodex */
+.service-card {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.service-card.active {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Card Inner (for flip) */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card Front & Back */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 32px 24px;
+    background: var(--color-gray-800);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-front::before,
+.card-back::before {
     content: '';
     position: absolute;
     top: 0;
@@ -435,11 +494,12 @@ a {
     background: var(--color-gray-500);
 }
 
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+.card-back {
+    transform: rotateY(180deg);
+    justify-content: space-between;
 }
 
+/* Service Icon */
 .service-icon {
     width: 56px;
     height: 56px;
@@ -447,7 +507,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
 }
 
@@ -458,7 +518,7 @@ a {
 }
 
 .service-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--color-white);
     margin-bottom: 12px;
     font-weight: 700;
@@ -466,7 +526,89 @@ a {
 
 .service-card p {
     color: var(--color-gray-400);
-    line-height: 1.7;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.card-back p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Card CTA Button */
+.card-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--color-gray-700);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    transition: var(--transition);
+}
+
+.card-cta:hover {
+    background: var(--color-gray-600);
+}
+
+/* Rolodex Navigation Arrows */
+.rolodex-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: var(--color-gray-800);
+    border: 1px solid var(--color-gray-700);
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rolodex-nav:hover {
+    background: var(--color-gray-700);
+}
+
+.rolodex-prev {
+    left: 0;
+}
+
+.rolodex-next {
+    right: 0;
+}
+
+/* Rolodex Dots */
+.rolodex-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.rolodex-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-gray-700);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.rolodex-dot:hover {
+    background: var(--color-gray-500);
+}
+
+.rolodex-dot.active {
+    background: var(--color-white);
 }
 
 /* ===== About Section ===== */
@@ -638,6 +780,32 @@ a {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+    /* Rolodex mobile */
+    .rolodex-viewport {
+        height: 380px;
+    }
+
+    .rolodex-track {
+        width: 260px;
+        height: 360px;
+    }
+
+    .service-card {
+        width: 260px;
+        height: 360px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 24px 20px;
+    }
+
+    .rolodex-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
     .nav-toggle {
         display: flex;
     }
