@@ -253,21 +253,23 @@ a {
 }
 
 .hero-logo-circle {
-    animation: spinCircle 10s linear infinite;
+    animation: spinCircle 12s ease-in-out infinite;
 }
 
 .hero-logo-plane {
-    animation: spinPlane 7s linear infinite;
+    animation: spinPlane 12s ease-in-out infinite;
 }
 
 @keyframes spinCircle {
     0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
+    83.33% { transform: rotateY(720deg); }
+    100% { transform: rotateY(720deg); }
 }
 
 @keyframes spinPlane {
     0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(-360deg); }
+    83.33% { transform: rotateY(-1080deg); }
+    100% { transform: rotateY(-1080deg); }
 }
 
 /* ===== Origami Button ===== */
