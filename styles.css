@@ -235,8 +235,8 @@ a {
 /* ===== Animated Hero Logo ===== */
 .hero-logo {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     margin: 0 auto 40px;
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -621,8 +621,8 @@ a {
     }
 
     .hero-logo {
-        width: 140px;
-        height: 140px;
+        width: 280px;
+        height: 280px;
         margin-bottom: 24px;
     }
 
