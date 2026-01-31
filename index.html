@@ -324,7 +324,22 @@
                 <div class="chat-bubble">Hi! I'm the Origami assistant. How can I help you learn about our AI services and products?</div>
             </div>
         </div>
+        <div id="chat-contact-form" class="chat-contact-form hidden">
+            <p>Share your info and we'll follow up!</p>
+            <input type="text" id="contact-name" class="chat-input" placeholder="Your name" autocomplete="name">
+            <input type="email" id="contact-email" class="chat-input" placeholder="Your email" autocomplete="email">
+            <div class="chat-contact-buttons">
+                <button type="button" id="contact-submit" class="btn-contact-submit">Send</button>
+                <button type="button" id="contact-cancel" class="btn-contact-cancel">Cancel</button>
+            </div>
+        </div>
         <div class="chat-input-area">
+            <button type="button" id="chat-contact-btn" class="chat-contact-btn" aria-label="Share contact info" title="Share your contact info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </button>
             <input type="text" id="chat-input" class="chat-input" placeholder="Ask about our services..." autocomplete="off">
             <button type="button" id="chat-send" class="chat-send" aria-label="Send message">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -559,6 +574,59 @@
 
             return 'Thanks for your question! For detailed inquiries, our team would love to help. Would you like to share your email so we can follow up, or you can reach us directly at info@origamias.com?';
         }
+
+        // Contact form elements
+        const chatContactBtn = document.getElementById('chat-contact-btn');
+        const chatContactForm = document.getElementById('chat-contact-form');
+        const contactName = document.getElementById('contact-name');
+        const contactEmail = document.getElementById('contact-email');
+        const contactSubmit = document.getElementById('contact-submit');
+        const contactCancel = document.getElementById('contact-cancel');
+
+        // Toggle contact form
+        chatContactBtn.addEventListener('click', () => {
+            chatContactForm.classList.toggle('hidden');
+        });
+
+        contactCancel.addEventListener('click', () => {
+            chatContactForm.classList.add('hidden');
+        });
+
+        // Submit contact info
+        contactSubmit.addEventListener('click', async () => {
+            const name = contactName.value.trim();
+            const email = contactEmail.value.trim();
+
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            contactSubmit.disabled = true;
+            contactSubmit.textContent = 'Sending...';
+
+            try {
+                const result = await fetch(`${CHAT_API_URL}/contact`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sessionId, name, email })
+                });
+
+                if (result.ok) {
+                    chatContactForm.classList.add('hidden');
+                    addMessage(`Thanks ${name || 'friend'}! We've got your info (${email}) and will be in touch soon.`, 'assistant');
+                    contactName.value = '';
+                    contactEmail.value = '';
+                } else {
+                    throw new Error('Failed to submit');
+                }
+            } catch (error) {
+                addMessage('Sorry, there was an error submitting your info. Please email us directly at info@origamias.com.', 'assistant');
+            }
+
+            contactSubmit.disabled = false;
+            contactSubmit.textContent = 'Send';
+        });
 
         // Event listeners
         chatSend.addEventListener('click', sendMessage);

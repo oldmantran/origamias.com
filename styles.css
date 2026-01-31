@@ -1161,6 +1161,94 @@ a {
     height: 20px;
 }
 
+/* Chat Contact Button */
+.chat-contact-btn {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--color-gray-600);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-400);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.chat-contact-btn:hover {
+    background: var(--color-gray-700);
+    color: var(--color-white);
+    border-color: var(--color-gray-500);
+}
+
+.chat-contact-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Chat Contact Form */
+.chat-contact-form {
+    padding: 16px;
+    background: var(--color-gray-800);
+    border-top: 1px solid var(--color-gray-700);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-contact-form.hidden {
+    display: none;
+}
+
+.chat-contact-form p {
+    font-size: 0.85rem;
+    color: var(--color-gray-400);
+    margin: 0;
+}
+
+.chat-contact-form .chat-input {
+    border-radius: 8px;
+}
+
+.chat-contact-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-contact-submit,
+.btn-contact-cancel {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-contact-submit {
+    background: var(--color-gray-600);
+    color: var(--color-white);
+}
+
+.btn-contact-submit:hover {
+    background: var(--color-gray-500);
+}
+
+.btn-contact-cancel {
+    background: transparent;
+    border: 1px solid var(--color-gray-600);
+    color: var(--color-gray-400);
+}
+
+.btn-contact-cancel:hover {
+    background: var(--color-gray-700);
+    color: var(--color-white);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     /* Chat widget mobile */
