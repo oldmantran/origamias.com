@@ -751,7 +751,7 @@ a {
 /* ===== About Section ===== */
 .about {
     padding: 120px 24px;
-    background: var(--color-black);
+    background: var(--color-gray-900);
     color: var(--color-white);
     position: relative;
     overflow: hidden;
