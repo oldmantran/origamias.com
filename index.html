@@ -214,6 +214,28 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Card 3: HALO -->
+                        <div class="product-card" data-index="2">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                    <div class="product-avatar">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                        </svg>
+                                    </div>
+                                    <h3>HALO</h3>
+                                    <p class="product-subtitle">Autonomous Threat Protection</p>
+                                    <p>Your cybersecurity guardian. She wraps you in a protective halo, detecting phishing threats and neutralizing them before they reach you.</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>HALO</h3>
+                                    <p>HALO deploys 12 specialized AI agents in a protective ring around you. 5-tier response escalation adapts to threat severity. Self-improving orchestration learns from every incident. Multi-source threat intelligence keeps you ahead of attackers.</p>
+                                    <a href="#contact" class="card-cta">Get Early Access</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -222,6 +244,7 @@
                 <div class="rolodex-dots">
                     <button type="button" class="rolodex-dot active" data-index="0" aria-label="Go to VERA"></button>
                     <button type="button" class="rolodex-dot" data-index="1" aria-label="Go to AIDEN"></button>
+                    <button type="button" class="rolodex-dot" data-index="2" aria-label="Go to HALO"></button>
                 </div>
             </div>
         </div>
@@ -267,6 +290,49 @@
             </div>
         </div>
     </footer>
+
+    <!-- Chat Widget -->
+    <button type="button" id="chat-fab" class="chat-fab" aria-label="Open chat">
+        <svg class="chat-fab-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 8L18 46L32 34Z" fill="#ffffff" fill-opacity="0.5"/>
+            <path d="M32 8L46 46L32 34Z" fill="#ffffff"/>
+            <path d="M32 34L18 46L32 54L46 46Z" fill="#ffffff" fill-opacity="0.3"/>
+        </svg>
+        <svg class="chat-fab-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+    </button>
+
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <svg class="chat-header-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 8L18 46L32 34Z" fill="#ffffff" fill-opacity="0.5"/>
+                    <path d="M32 8L46 46L32 34Z" fill="#ffffff"/>
+                    <path d="M32 34L18 46L32 54L46 46Z" fill="#ffffff" fill-opacity="0.3"/>
+                </svg>
+                <span>Chat with Origami</span>
+            </div>
+            <button type="button" class="chat-close" aria-label="Close chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message assistant">
+                <div class="chat-bubble">Hi! I'm the Origami assistant. How can I help you learn about our AI services and products?</div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Ask about our services..." autocomplete="off">
+            <button type="button" id="chat-send" class="chat-send" aria-label="Send message">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
 
     <script>
         const navToggle = document.querySelector('.nav-toggle');
@@ -365,6 +431,140 @@
         // Initialize both rolodexes
         const servicesRolodex = initRolodex('#services .rolodex-container', '.service-card');
         const productsRolodex = initRolodex('#products-rolodex', '.product-card');
+
+        // ===== Chat Widget =====
+        const CHAT_API_URL = 'https://origami-chat-api.ambitiousrock-8a50786f.southcentralus.azurecontainerapps.io/api';
+        // const CHAT_API_URL = 'http://localhost:7071/api'; // For local dev
+
+        const chatFab = document.getElementById('chat-fab');
+        const chatWindow = document.getElementById('chat-window');
+        const chatClose = document.querySelector('.chat-close');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+        const chatMessages = document.getElementById('chat-messages');
+
+        let chatOpen = false;
+        let sessionId = localStorage.getItem('origami-chat-session') || null;
+
+        // Toggle chat window
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            chatFab.classList.toggle('open', chatOpen);
+            chatWindow.classList.toggle('open', chatOpen);
+            if (chatOpen) {
+                chatInput.focus();
+            }
+        }
+
+        chatFab.addEventListener('click', toggleChat);
+        chatClose.addEventListener('click', toggleChat);
+
+        // Send message
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            // Add user message to chat
+            addMessage(message, 'user');
+            chatInput.value = '';
+
+            // Show typing indicator
+            const typingId = showTyping();
+
+            try {
+                // Try API first, fall back to mock if unavailable
+                let response;
+                try {
+                    const result = await fetch(`${CHAT_API_URL}/chat`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message, sessionId })
+                    });
+
+                    if (result.ok) {
+                        const data = await result.json();
+                        response = data.response;
+                        if (data.sessionId) {
+                            sessionId = data.sessionId;
+                            localStorage.setItem('origami-chat-session', sessionId);
+                        }
+                    } else {
+                        throw new Error('API error');
+                    }
+                } catch (apiError) {
+                    // Fall back to mock responses if API unavailable
+                    console.log('API unavailable, using mock response');
+                    response = await mockChatResponse(message);
+                }
+
+                removeTyping(typingId);
+                addMessage(response, 'assistant');
+            } catch (error) {
+                removeTyping(typingId);
+                addMessage('Sorry, I encountered an error. Please try again or email us at info@origamias.com.', 'assistant');
+            }
+        }
+
+        function addMessage(text, role) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${role}`;
+            messageDiv.innerHTML = `<div class="chat-bubble">${escapeHtml(text)}</div>`;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const id = 'typing-' + Date.now();
+            const typingDiv = document.createElement('div');
+            typingDiv.id = id;
+            typingDiv.className = 'chat-message assistant typing';
+            typingDiv.innerHTML = `<div class="chat-bubble"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>`;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function removeTyping(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Mock responses until backend is ready
+        async function mockChatResponse(message) {
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 400));
+
+            const lowerMessage = message.toLowerCase();
+
+            if (lowerMessage.includes('service') || lowerMessage.includes('what do you do') || lowerMessage.includes('help')) {
+                return 'We offer three core services: Agentic Analysis (AI-powered operational insights), Rapid AI Prototyping (fast concept-to-demo development), and AI Automation (custom solutions for repetitive tasks). Which interests you most?';
+            }
+            if (lowerMessage.includes('product') || lowerMessage.includes('vera') || lowerMessage.includes('aiden') || lowerMessage.includes('halo')) {
+                return 'We have three AI agents coming soon: VERA (autonomous QA), AIDEN (AI Product Manager), and HALO (cybersecurity protection). Would you like early access to any of these?';
+            }
+            if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
+                return 'Pricing depends on the scope of your project. We\'d love to discuss your needs and provide a tailored quote. Would you like to share your email so we can follow up?';
+            }
+            if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+                return 'You can reach us at info@origamias.com. We typically respond within one business day. Or share your email here and we\'ll reach out to you!';
+            }
+            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                return 'Hello! Great to meet you. I\'m here to help you learn about Origami\'s AI services and products. What would you like to know?';
+            }
+
+            return 'Thanks for your question! For detailed inquiries, our team would love to help. Would you like to share your email so we can follow up, or you can reach us directly at info@origamias.com?';
+        }
+
+        // Event listeners
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
     </script>
 </body>
 </html>
