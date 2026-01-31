@@ -8,8 +8,20 @@ Thumbs.db
 *.swp
 *.swo
 
+# Claude Code
+.claude/
+
+# Environment
+.env
+
 # Logs
 *.log
 
 # Brand assets (keep local only)
 logo_package/
+logo_package*.zip
+
+# API backend
+api/node_modules/
+api/.env
+api/data/

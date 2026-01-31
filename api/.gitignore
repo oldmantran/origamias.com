@@ -1,0 +1,8 @@
+node_modules/
+data/*.db
+local.settings.json
+.env
+*.log
+.vscode/
+.idea/
+dist/
