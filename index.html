@@ -35,6 +35,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
@@ -160,6 +161,72 @@
         </div>
     </section>
 
+    <section id="products" class="products">
+        <div class="container">
+            <h2>AI Agents</h2>
+            <p class="section-subtitle">Autonomous specialists coming soon</p>
+
+            <div class="rolodex-container" id="products-rolodex">
+                <button type="button" class="rolodex-nav rolodex-prev" aria-label="Previous">‹</button>
+
+                <div class="rolodex-viewport">
+                    <div class="rolodex-track">
+                        <!-- Card 1: VERA -->
+                        <div class="product-card" data-index="0">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                    <div class="product-avatar">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h3>VERA</h3>
+                                    <p class="product-subtitle">Verification & Regression Authority</p>
+                                    <p>Your autonomous QA agent. She validates code, generates tests, and fixes bugs while you sleep.</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>VERA</h3>
+                                    <p>VERA is an autonomous QA gatekeeper with 3-tier validation, cryptographically signed attestations, and LLM-powered test generation. She creates bugs from failures, spawns fix agents, validates the fix, and loops until pass—no human intervention required.</p>
+                                    <a href="#contact" class="card-cta">Get Early Access</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: AIDEN -->
+                        <div class="product-card" data-index="1">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                    <div class="product-avatar">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                                        </svg>
+                                    </div>
+                                    <h3>AIDEN</h3>
+                                    <p class="product-subtitle">AI-Driven Enterprise Navigator</p>
+                                    <p>Your autonomous Product Manager. He transforms visions into sprint-ready backlogs in minutes.</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>AIDEN</h3>
+                                    <p>AIDEN orchestrates 6 specialized agents to decompose product visions into epics, features, user stories, tasks, and test cases—complete with acceptance criteria. Privacy-first with local LLM support. 95% cost savings vs. cloud alternatives.</p>
+                                    <a href="#contact" class="card-cta">Get Early Access</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="rolodex-nav rolodex-next" aria-label="Next">›</button>
+
+                <div class="rolodex-dots">
+                    <button type="button" class="rolodex-dot active" data-index="0" aria-label="Go to VERA"></button>
+                    <button type="button" class="rolodex-dot" data-index="1" aria-label="Go to AIDEN"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="about">
         <div class="about-fold"></div>
         <div class="container">
@@ -218,86 +285,86 @@
             });
         });
 
-        // ===== Rolodex Carousel =====
-        const cards = document.querySelectorAll('.service-card');
-        const dots = document.querySelectorAll('.rolodex-dot');
-        const prevBtn = document.querySelector('.rolodex-prev');
-        const nextBtn = document.querySelector('.rolodex-next');
-        let activeIndex = 0;
-        const totalCards = cards.length;
+        // ===== Rolodex Factory =====
+        function initRolodex(containerSelector, cardSelector) {
+            const container = document.querySelector(containerSelector);
+            if (!container) return null;
 
-        function updateRolodex() {
-            cards.forEach((card, index) => {
-                let diff = index - activeIndex;
+            const cards = container.querySelectorAll(cardSelector);
+            const dots = container.querySelectorAll('.rolodex-dot');
+            const prevBtn = container.querySelector('.rolodex-prev');
+            const nextBtn = container.querySelector('.rolodex-next');
+            let activeIndex = 0;
+            const totalCards = cards.length;
 
-                // Normalize for circular wrapping
-                if (Math.abs(diff) > totalCards / 2) {
-                    diff = diff > 0 ? diff - totalCards : diff + totalCards;
-                }
+            function update() {
+                cards.forEach((card, index) => {
+                    let diff = index - activeIndex;
 
-                // Calculate position based on difference from active
-                const xOffset = diff * 280;
-                const zOffset = -Math.abs(diff) * 100;
-                const rotation = diff * -15;
-                const scale = 1 - Math.abs(diff) * 0.15;
-                const opacity = 1 - Math.abs(diff) * 0.4;
+                    // Normalize for circular wrapping
+                    if (Math.abs(diff) > totalCards / 2) {
+                        diff = diff > 0 ? diff - totalCards : diff + totalCards;
+                    }
 
-                card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) rotateY(${rotation}deg) scale(${scale})`;
-                card.style.opacity = opacity;
-                card.style.zIndex = 10 - Math.abs(diff);
-                card.style.pointerEvents = 'auto';
+                    const xOffset = diff * 280;
+                    const zOffset = -Math.abs(diff) * 100;
+                    const rotation = diff * -15;
+                    const scale = 1 - Math.abs(diff) * 0.15;
+                    const opacity = 1 - Math.abs(diff) * 0.4;
 
-                // Toggle active class for float animation
-                card.classList.toggle('active', index === activeIndex);
+                    card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) rotateY(${rotation}deg) scale(${scale})`;
+                    card.style.opacity = opacity;
+                    card.style.zIndex = 10 - Math.abs(diff);
+                    card.style.pointerEvents = 'auto';
 
-                // Remove flipped state when navigating away
-                if (index !== activeIndex) {
-                    card.classList.remove('flipped');
-                }
-            });
+                    card.classList.toggle('active', index === activeIndex);
 
-            // Update dots
+                    if (index !== activeIndex) {
+                        card.classList.remove('flipped');
+                    }
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            }
+
+            function goToCard(index) {
+                activeIndex = ((index % totalCards) + totalCards) % totalCards;
+                update();
+            }
+
+            // Navigation
+            prevBtn.addEventListener('click', () => goToCard(activeIndex - 1));
+            nextBtn.addEventListener('click', () => goToCard(activeIndex + 1));
+
+            // Dot navigation
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeIndex);
+                dot.addEventListener('click', () => goToCard(index));
             });
+
+            // Card click: flip if active, navigate if not
+            cards.forEach((card, index) => {
+                card.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('card-cta')) return;
+
+                    if (index === activeIndex) {
+                        card.classList.toggle('flipped');
+                    } else {
+                        goToCard(index);
+                    }
+                });
+            });
+
+            // Initialize
+            update();
+
+            return { goToCard, update };
         }
 
-        function goToCard(index) {
-            activeIndex = ((index % totalCards) + totalCards) % totalCards;
-            updateRolodex();
-        }
-
-        // Navigation
-        prevBtn.addEventListener('click', () => goToCard(activeIndex - 1));
-        nextBtn.addEventListener('click', () => goToCard(activeIndex + 1));
-
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToCard(index));
-        });
-
-        // Card click: flip if active, navigate if not
-        cards.forEach((card, index) => {
-            card.addEventListener('click', (e) => {
-                // Don't flip if clicking the CTA link
-                if (e.target.classList.contains('card-cta')) return;
-
-                if (index === activeIndex) {
-                    card.classList.toggle('flipped');
-                } else {
-                    goToCard(index);
-                }
-            });
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') goToCard(activeIndex - 1);
-            if (e.key === 'ArrowRight') goToCard(activeIndex + 1);
-        });
-
-        // Initialize
-        updateRolodex();
+        // Initialize both rolodexes
+        const servicesRolodex = initRolodex('#services .rolodex-container', '.service-card');
+        const productsRolodex = initRolodex('#products-rolodex', '.product-card');
     </script>
 </body>
 </html>
