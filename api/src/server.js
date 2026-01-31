@@ -107,20 +107,17 @@ app.post('/api/chat', async (req, res) => {
 // Contact endpoint
 app.post('/api/contact', async (req, res) => {
     try {
-        const { sessionId, name, email } = req.body;
-
-        if (!sessionId) {
-            return res.status(400).json({ error: 'Session ID is required' });
-        }
+        let { sessionId, name, email } = req.body;
 
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             return res.status(400).json({ error: 'Valid email is required' });
         }
 
-        // Check session exists
-        const session = db.getSession(sessionId);
+        // Create session if none exists
+        let session = sessionId ? db.getSession(sessionId) : null;
         if (!session) {
-            return res.status(404).json({ error: 'Session not found' });
+            sessionId = db.createSession();
+            session = db.getSession(sessionId);
         }
 
         // Update session with contact info
@@ -130,10 +127,14 @@ app.post('/api/contact', async (req, res) => {
         const transcript = db.getTranscript(sessionId);
         await sendTranscript(transcript);
 
+        // Send confirmation to visitor
+        await sendConfirmation(email, name);
+
         console.log(`Contact submitted: ${email} for session ${sessionId}`);
 
         res.json({
             success: true,
+            sessionId,
             message: "Thank you! We'll be in touch soon."
         });
     } catch (error) {
