@@ -883,7 +883,7 @@ a {
 /* ===== Footer ===== */
 .footer {
     padding: 48px 24px;
-    background: var(--color-gray-900);
+    background: var(--color-black);
     text-align: center;
     position: relative;
     overflow: hidden;
