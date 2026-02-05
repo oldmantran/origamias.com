@@ -19,8 +19,8 @@ HALO (Standalone Cybersecurity): Free tier available, Basic $10 per month, Pro $
 AI Engineering Pods:
 AI Engineer rates: $180 per hour (primary), $150 per hour (secondary)
 AI Tools (Claude Code and other tools): $1,500 per week flat rate
-1 AI Engineer Pod: $8,700 per week (includes 40 hours plus tools)
-2 AI Engineer Pod: $14,700 per week (includes 80 hours plus tools)
+Single Engineer Pod: $8,700 per week (one AI Engineer, 40 hours plus tools)
+Two Engineer Pod: $14,700 per week (two AI Engineers, 80 hours plus tools)
 
 OD Framework Bundles (10% discount):
 1 AI Engineer Pod plus VERA plus AIDEN: $12,330 per week (Complete turnkey team)
