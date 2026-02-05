@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Database = require('better-sqlite3');
 const path = require('path');
+const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
 // Database path - use DB_PATH env var for Azure File Share mount
@@ -13,6 +14,12 @@ let db = null;
  */
 function init() {
     if (db) return db;
+
+    // Ensure the directory exists
+    const dbDir = path.dirname(dbPath);
+    if (!fs.existsSync(dbDir)) {
+        fs.mkdirSync(dbDir, { recursive: true });
+    }
 
     // Create database with timeout to handle busy locks
     db = new Database(dbPath, { timeout: 5000 });
