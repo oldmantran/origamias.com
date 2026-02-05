@@ -14,7 +14,12 @@ let db = null;
 function init() {
     if (db) return db;
 
-    db = new Database(dbPath);
+    // Create database with timeout to handle busy locks
+    db = new Database(dbPath, { timeout: 5000 });
+
+    // Enable WAL mode for better concurrency (prevents most locking issues)
+    db.pragma('journal_mode = WAL');
+    db.pragma('busy_timeout = 5000');
 
     // Create tables if they don't exist
     db.exec(`
