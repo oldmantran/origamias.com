@@ -17,15 +17,12 @@ AIDEN: $2,500 per week per project
 HALO (Standalone Cybersecurity): Free tier available, Basic $10 per month, Pro $50 per month, Enterprise pricing available
 
 AI Engineering Pods:
-A Pod is a delivery team. You can scale a Pod by adding engineers.
 AI Engineer rates: $180 per hour (primary), $150 per hour (secondary)
 AI Tools (Claude Code and other tools): $1,500 per week flat rate
-Pod with 1 AI Engineer: $8,700 per week (40 hours plus tools)
-Pod with 2 AI Engineers: $14,700 per week (80 hours plus tools, same Pod, additional engineer)
+AI Engineering Pod: $8,700 per week (40 hours plus tools)
 
-OD Framework Bundles (10% discount):
-1 AI Engineer Pod plus VERA plus AIDEN: $12,330 per week (Complete turnkey team)
-2 AI Engineer Pod plus VERA plus AIDEN: $17,730 per week (Accelerated delivery team)
+OD Framework Bundle (10% discount):
+AI Engineering Pod plus VERA plus AIDEN: $12,330 per week (Complete turnkey team)
 
 Fixed Price Projects:
 For clearly defined deliverables with high confidence, we offer fixed pricing.
