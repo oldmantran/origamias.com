@@ -1,9 +1,11 @@
-AIDEN (AI-Driven Enterprise Navigator):
+AIDEN (AI-Driven Enterprise Navigator) - IN DEVELOPMENT:
 
-AIDEN is an autonomous Product and Project Manager that specializes in Azure DevOps backlog creation, monitoring, and management. It transforms product visions into complete, structured backlogs with zero manual effort.
+Status: AIDEN is in final development and will launch in the coming weeks. Join the waitlist for early access.
 
-What AIDEN Does:
-Takes a product vision statement and automatically generates a complete work item hierarchy: Epics, Features, User Stories, and Tasks. This process that traditionally takes weeks of grooming sessions happens in minutes.
+AIDEN will be an autonomous Product and Project Manager that specializes in Azure DevOps backlog creation, monitoring, and management. It will transform product visions into complete, structured backlogs with zero manual effort.
+
+What AIDEN Will Do:
+Take a product vision statement and automatically generate a complete work item hierarchy: Epics, Features, User Stories, and Tasks. This process that traditionally takes weeks of grooming sessions will happen in minutes.
 
 6 Specialized Agents:
 Epic Strategist: Transforms product vision into business-value-focused epics with business drivers
@@ -12,7 +14,7 @@ Developer Agent: Generates implementation tasks with Fibonacci story point estim
 Vision Optimizer: Enhances vision statements using multi-domain expertise weighting
 Backlog Sweeper: Monitors backlog quality and compliance, identifies items needing decomposition
 
-Note: Test case generation is handled by VERA, not AIDEN. The two products work together in the OD Framework.
+Note: Test case generation will be handled by VERA, not AIDEN. The two products will work together in the OD Framework.
 
 Work Item Hierarchy (Azure DevOps Best Practices):
 Epic (Strategic Business Initiative)
@@ -27,6 +29,6 @@ Automatic acceptance criteria generation following INVEST principles
 Fibonacci story point estimation
 Real-time progress tracking
 
-AIDEN is part of the Origami Delivery Framework, handling product management and backlog creation responsibilities.
+AIDEN will be part of the Origami Delivery Framework, handling product management and backlog creation responsibilities.
 
-Standalone pricing: $2,500 per week per project
+Planned standalone pricing: $2,500 per week per project (subject to change at launch)

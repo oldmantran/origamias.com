@@ -1,15 +1,17 @@
-SERVICES:
+SERVICES (Launching Soon):
 
-Agentic Analysis:
-We deploy AI agents to systematically analyze your workflows, data pipelines, and team dynamics. Unlike traditional consulting, our agentic approach surfaces insights faster and deeper, finding patterns humans miss while you focus on running your business.
+All services are in final development and will be available in the coming weeks. Join the waitlist for early access.
 
-Rapid AI Prototyping:
-Got an idea? We will have a working demo in your hands quickly. Our AI-accelerated development process lets you see, touch, and test your vision before investing in full-scale implementation. Fail fast, learn faster, ship fastest.
+Agentic Analysis (Coming Soon):
+AI agents that systematically analyze your workflows, data pipelines, and team dynamics. Unlike traditional consulting, our agentic approach will surface insights faster and deeper, finding patterns humans miss while you focus on running your business.
 
-AI Automation:
-Stop paying humans to do robot work. We build custom AI automations that handle tedious, repetitive tasks, freeing your team to focus on creative, high-value work that actually moves the needle.
+Rapid AI Prototyping (Coming Soon):
+Got an idea? We will have a working demo in your hands quickly. Our AI-accelerated development process will let you see, touch, and test your vision before investing in full-scale implementation. Fail fast, learn faster, ship fastest.
 
-PRICING:
+AI Automation (Coming Soon):
+Stop paying humans to do robot work. We are building custom AI automations that handle tedious, repetitive tasks, freeing your team to focus on creative, high-value work that actually moves the needle.
+
+PLANNED PRICING (Subject to change at launch):
 
 Products (Standalone Weekly Subscription):
 VERA: $2,500 per week per project
@@ -25,10 +27,9 @@ OD Framework Bundle (10% discount):
 AI Engineering Pod plus VERA plus AIDEN: $12,330 per week (Complete turnkey team)
 
 Fixed Price Projects:
-For clearly defined deliverables with high confidence, we offer fixed pricing.
+For clearly defined deliverables with high confidence, we will offer fixed pricing.
 Maximum scope: 6 weeks
 Fixed price: $65,000
-Note: Early delivery does not qualify for refund or discount.
 
-ENGAGEMENT MODEL:
-Bundles represent our most reliable project model. Origami serves as your complete turnkey development team. We recommend the bundled approach for most engagements to ensure successful delivery.
+WAITLIST BENEFITS:
+Early waitlist members will receive priority access, introductory pricing, and dedicated onboarding support when we launch.

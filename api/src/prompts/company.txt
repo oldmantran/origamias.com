@@ -1,26 +1,29 @@
 ABOUT ORIGAMI AGENTIC SOLUTIONS:
 
-We are an AI-first consulting firm that delivers solutions faster with fewer resources than traditional teams. Our founder brings nearly three decades of experience in software delivery, technology optimization, and harmonizing teams.
+We are an AI-first consulting firm preparing to launch services that deliver solutions faster with fewer resources than traditional teams. Our founder brings nearly three decades of experience in software delivery, technology optimization, and harmonizing teams.
 
 Our tagline: "Folding chaos into clarity. AI-first. Human-refined."
+
+CURRENT STATUS:
+All products and services are in final development and will be rolling out in the coming weeks. We are accepting waitlist signups for early access.
 
 THE PROBLEM WE SOLVE:
 Traditional software delivery is broken. Large teams, endless meetings, months of delays, and spiraling costs. The industry still operates like it's 2010 while AI has fundamentally changed what's possible.
 
 THE ORIGAMI WAY:
-We've reimagined the Software Development Lifecycle from the ground up. By replacing traditional human-heavy processes with specialized AI agents working alongside a small team of AI Engineers, we deliver production-ready software in weeks instead of months.
+We are reimagining the Software Development Lifecycle from the ground up. By replacing traditional human-heavy processes with specialized AI agents working alongside a small team of AI Engineers, we will deliver production-ready software in weeks instead of months.
 
-THE ORIGAMI DELIVERY (OD) FRAMEWORK:
-Our complete turnkey delivery solution combines three components:
-1. AIDEN (Autonomous PM) transforms product visions into complete, prioritized backlogs in minutes, not weeks of grooming sessions
-2. AI Engineering Pods (Agentic Coding plus AI Engineers) implement features with unprecedented speed and consistency
-3. VERA (Autonomous QA) validates every change with 3-tier testing, generates test cases, provides cryptographic attestations, and performs autonomous bug fixing
+THE ORIGAMI DELIVERY (OD) FRAMEWORK (Launching Soon):
+Our complete turnkey delivery solution will combine three components:
+1. AIDEN (Autonomous PM) - transforms product visions into complete, prioritized backlogs in minutes, not weeks of grooming sessions
+2. AI Engineering Pods (Agentic Coding plus AI Engineers) - implement features with unprecedented speed and consistency
+3. VERA (Autonomous QA) - validates every change with 3-tier testing, generates test cases, provides cryptographic attestations, and performs autonomous bug fixing
 
 THE RESULT:
-What traditionally requires large teams and months of effort, we deliver with 1-2 AI Engineers and our agent framework in a fraction of the time. Same quality. Lower cost. Exponentially faster iteration.
+What traditionally requires large teams and months of effort, we will deliver with 1-2 AI Engineers and our agent framework in a fraction of the time. Same quality. Lower cost. Exponentially faster iteration.
 
 OUR PROMISE:
 We guarantee faster delivery with fewer resources than traditional consulting. If we cannot beat your current timeline significantly, we will tell you upfront.
 
-KEY DIFFERENTIATOR:
-Implementation happens in Origami's ecosystem because client infrastructure is typically insufficient for the OD Framework's requirements. This ensures consistent, reliable delivery.
+JOIN THE WAITLIST:
+Sign up now to be among the first to access our services when we launch. Early waitlist members will receive priority onboarding and special introductory offers.

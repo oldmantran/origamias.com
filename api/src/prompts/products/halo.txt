@@ -1,14 +1,16 @@
-HALO (Honeypot Automated Litigation and Offensive):
+HALO (Honeypot Automated Litigation and Offensive) - IN DEVELOPMENT:
 
-HALO is a standalone autonomous cybersecurity platform with intelligent threat detection, confidence-based retaliation, and self-improving AI agents. It is separate from the Origami Delivery Framework and serves as an independent cybersecurity product.
+Status: HALO is in final development and will launch in the coming weeks. Join the waitlist for early access.
 
-What Makes HALO Different:
-HALO represents a paradigm shift from reactive to proactive defense. Instead of just detecting threats, HALO actively responds with a tiered retaliation system based on confidence levels.
+HALO will be a standalone autonomous cybersecurity platform with intelligent threat detection, confidence-based retaliation, and self-improving AI agents. It will be separate from the Origami Delivery Framework and serve as an independent cybersecurity product.
+
+What Will Make HALO Different:
+HALO represents a paradigm shift from reactive to proactive defense. Instead of just detecting threats, HALO will actively respond with a tiered retaliation system based on confidence levels.
 
 MAESTRO Orchestrator:
-The primary agent that coordinates 12 specialized AI agents. MAESTRO learns from dispatch decisions and outcomes, maintaining a heuristics database that auto-tunes based on effectiveness. It uses content-addressable memory for instant threat recall.
+The primary agent that will coordinate 12 specialized AI agents. MAESTRO will learn from dispatch decisions and outcomes, maintaining a heuristics database that auto-tunes based on effectiveness. It will use content-addressable memory for instant threat recall.
 
-Specialized Agents Include:
+Specialized Agents Will Include:
 MIMIC for brand impersonation detection
 GHOST for domain intelligence
 SENTINEL for urgency detection
@@ -31,6 +33,6 @@ AbuseIPDB for IP reputation
 URLScan.io for screenshots and tech detection
 Google Safe Browsing for categorization
 
-HALO is a standalone product, not part of the OD Framework.
+HALO will be a standalone product, not part of the OD Framework.
 
-Pricing: Free tier available, Basic $10 per month, Pro $50 per month, Enterprise pricing available
+Planned pricing: Free tier available, Basic $10 per month, Pro $50 per month, Enterprise pricing available (subject to change at launch)
