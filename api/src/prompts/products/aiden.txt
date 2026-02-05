@@ -1,0 +1,32 @@
+AIDEN (AI-Driven Enterprise Navigator):
+
+AIDEN is an autonomous Product and Project Manager that specializes in Azure DevOps backlog creation, monitoring, and management. It transforms product visions into complete, structured backlogs with zero manual effort.
+
+What AIDEN Does:
+Takes a product vision statement and automatically generates a complete work item hierarchy: Epics, Features, User Stories, and Tasks. This process that traditionally takes weeks of grooming sessions happens in minutes.
+
+6 Specialized Agents:
+Epic Strategist: Transforms product vision into business-value-focused epics with business drivers
+Decomposition Agent: Converts epics into features and user stories with acceptance criteria
+Developer Agent: Generates implementation tasks with Fibonacci story point estimates
+Vision Optimizer: Enhances vision statements using multi-domain expertise weighting
+Backlog Sweeper: Monitors backlog quality and compliance, identifies items needing decomposition
+
+Note: Test case generation is handled by VERA, not AIDEN. The two products work together in the OD Framework.
+
+Work Item Hierarchy (Azure DevOps Best Practices):
+Epic (Strategic Business Initiative)
+Feature (Business Value Component, no acceptance criteria)
+User Story (Detailed Requirements with acceptance criteria)
+Task (Technical Implementation with estimates)
+
+Key Features:
+Azure DevOps native with full hierarchy compliance
+Vision Optimizer with primary, secondary, and tertiary domain weighting
+Automatic acceptance criteria generation following INVEST principles
+Fibonacci story point estimation
+Real-time progress tracking
+
+AIDEN is part of the Origami Delivery Framework, handling product management and backlog creation responsibilities.
+
+Standalone pricing: $2,500 per week per project

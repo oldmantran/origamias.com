@@ -3,11 +3,50 @@ const OpenAI = require('openai');
 const fs = require('fs');
 const path = require('path');
 
-// Load system prompt
-const systemPrompt = fs.readFileSync(
-    path.join(__dirname, '../prompts/system.txt'),
-    'utf-8'
-);
+// Load and combine all prompt files
+function loadPrompts() {
+    const promptsDir = path.join(__dirname, '../prompts');
+    const productsDir = path.join(promptsDir, 'products');
+
+    // Define load order
+    const promptFiles = [
+        'system.txt',
+        'company.txt',
+        'services.txt'
+    ];
+
+    // Load main prompt files
+    const prompts = promptFiles.map(file => {
+        const filePath = path.join(promptsDir, file);
+        if (fs.existsSync(filePath)) {
+            return fs.readFileSync(filePath, 'utf-8');
+        }
+        return '';
+    });
+
+    // Load product files if directory exists
+    if (fs.existsSync(productsDir)) {
+        const productFiles = fs.readdirSync(productsDir)
+            .filter(file => file.endsWith('.txt'))
+            .sort(); // Alphabetical: aiden, halo, vera
+
+        productFiles.forEach(file => {
+            const filePath = path.join(productsDir, file);
+            prompts.push(fs.readFileSync(filePath, 'utf-8'));
+        });
+    }
+
+    // Load FAQ last
+    const faqPath = path.join(promptsDir, 'faq.txt');
+    if (fs.existsSync(faqPath)) {
+        prompts.push(fs.readFileSync(faqPath, 'utf-8'));
+    }
+
+    return prompts.filter(p => p.trim()).join('\n\n---\n\n');
+}
+
+// Load combined system prompt at startup
+const systemPrompt = loadPrompts();
 
 // Initialize Grok client (OpenAI-compatible API)
 const client = new OpenAI({

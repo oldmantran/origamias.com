@@ -1,0 +1,31 @@
+VERA (Verification and Regression Authority):
+
+VERA is an autonomous QA agent and trust framework gatekeeper that provides independent validation, test generation, and promotion gating. It operates as a completely separate system from the projects it validates, ensuring independence and preventing false claims of code completion.
+
+Two Operational Modes:
+
+QA Architect Mode (Development Phase):
+When a User Story is created or activated, VERA parses acceptance criteria, generates test plans and test suites, creates test cases, links everything to work items, and estimates story points. Output is fully populated Azure DevOps Test Plans ready for execution.
+
+Quality Gatekeeper Mode (CI/CD Phase):
+Triggered by pull requests, builds, or deployments. VERA runs 3-tier validation, scores code against acceptance criteria, signs cryptographic attestations, and approves or blocks promotions. It automatically creates bugs on failure.
+
+3-Tier Validation Engine:
+Tier 1 (Static Analysis): AST analysis, stub detection, code quality checks (33.4% weight)
+Tier 2 (Behavioral): VERA-generated tests from acceptance criteria (33.3% weight)
+Tier 3 (Integration): Cross-component verification (33.3% weight)
+
+Trust Score Thresholds:
+95% or higher: PASS, approve promotion
+80-94%: CONDITIONAL, flag for human review
+Below 80%: FAIL, block promotion and create bug
+
+Key Features:
+LLM-powered test generation from acceptance criteria
+Ed25519 cryptographic attestations that are tamper-proof and auditable
+Full Azure DevOps integration including webhooks, test management, and PR comments
+Autonomous bug fix loop that creates bugs, triggers fixes, validates, and loops until pass
+
+VERA is part of the Origami Delivery Framework, handling all QA and test case generation responsibilities.
+
+Standalone pricing: $2,500 per week per project

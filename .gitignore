@@ -18,8 +18,8 @@ Thumbs.db
 *.log
 
 # Brand assets (keep local only)
-logo_package/
-logo_package*.zip
+logo_package*/
+*.zip
 
 # API backend
 api/node_modules/

@@ -1,0 +1,25 @@
+FREQUENTLY ASKED QUESTIONS:
+
+How do you handle client data?
+We follow standard enterprise security practices. All client data is handled with industry-standard security measures. NDAs are available for all engagements. We can discuss specific compliance requirements during our initial conversation.
+
+How long does a typical project take?
+With our OD Framework, we deliver significantly faster than traditional teams. Fixed-price projects are scoped for a maximum of 6 weeks. Timeline depends on scope, but we guarantee faster delivery than traditional approaches or we will tell you upfront.
+
+Why do you work in your own ecosystem instead of ours?
+Implementation happens in Origami's ecosystem because the OD Framework requires specific tooling, AI integrations, and infrastructure that client environments typically cannot support. This ensures consistent, reliable delivery without environment-related delays.
+
+Can we use just one of your products without the full bundle?
+Yes. VERA, AIDEN, and HALO are all available as standalone subscriptions. However, we recommend the bundled OD Framework for most delivery engagements as it provides the most reliable results.
+
+What if we already have a QA team or PM?
+Our products can augment existing teams or replace functions entirely. Many clients start with one component and expand. We can discuss what configuration makes sense for your situation.
+
+Do you offer a trial or proof of concept?
+We are happy to discuss a limited scope engagement or proof of concept to demonstrate value. Contact us to discuss options.
+
+What technologies do you work with?
+Our AI Engineering Pods work across modern technology stacks. During initial discussions, we will confirm our experience with your specific requirements.
+
+How do we get started?
+Contact us at info@origamias.com or share your email here in chat. We typically respond within one business day and can schedule an initial conversation to understand your needs.
